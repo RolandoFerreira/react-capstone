@@ -1,7 +1,8 @@
+import logo from './images/Logo.svg'
 function Header(){
     return(
         <header>
-            <img src={require('./images/Logo.svg')} alt="Little Lemon Logo" />
+            <img src={logo} alt="Little Lemon Logo" />
         </header>
     );
 }
