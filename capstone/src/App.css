@@ -58,7 +58,7 @@ main { width: 100%; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 2rem;
+  padding: 3rem 10%;
   gap: 2rem;
 }
 .hero h1 { color: #f4ce14; }
@@ -84,7 +84,7 @@ main { width: 100%; }
 .btn:hover { background-color: #e8be00; transform: scale(1.05); }
 
 /* SPECIALS */
-.specials { padding: 3rem 2rem; background-color: #ffffff; }
+.specials { padding: 3rem 10%; background-color: #ffffff; }
 .specials-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
 .specials-header h2 { font-family: 'Markazi Text', serif; color: #333333; }
 .specials-cards { display: flex; gap: 1.5rem; }
@@ -95,7 +95,7 @@ main { width: 100%; }
 .card-body h3 { margin-bottom: 0.5rem; color: #333333; }
 .card-body p  { font-size: 1rem; color: #555555; line-height: 1.6; flex: 1; }
 
-.card-title-row {                        /* fixed typo: was card-tittle-row */
+.card-title-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -119,7 +119,7 @@ main { width: 100%; }
 }
 
 /* TESTIMONIALS */
-.testimonials { background-color: #495e57; padding: 3rem 2rem; }
+.testimonials { background-color: #495e57; padding: 3rem 10%; }
 .testimonials h2 { color: #ffffff; text-align: center; margin-bottom: 2rem; font-family: 'Markazi Text', serif; }
 .testimonials-cards { display: flex; gap: 1.5rem; }
 .testimonial-card { background-color: #ffffff; border-radius: 1rem; padding: 1.5rem; flex: 1; text-align: center; }
@@ -148,23 +148,86 @@ main { width: 100%; }
 .img-bottom { width: 60%; height: 220px; bottom: 0; left: 0; }
 
 /* FOOTER */
-footer { background-color: #495e57; display: flex; gap: 3rem; padding: 2rem; align-items: flex-start; }
-footer img { width: 120px; height: auto; }   /* fixed: was height: 212 missing px */
+footer { background-color: #495e57; display: flex; gap: 3rem; padding: 2rem 10%; align-items: flex-start; }
+footer img { width: 120px; height: auto; }
 .footer-col { display: flex; flex-direction: column; }
 footer h4 { color: #f4ce14; font-family: 'Karla', sans-serif; font-size: 1.125rem; font-weight: 800; margin-bottom: 1rem; }
 footer a, footer p { color: #edefee; text-decoration: none; line-height: 2; font-size: 0.9rem; }
 footer a:hover { color: #f4ce14; }
 
+/* BOOKING PAGE */
+.booking {
+  background-color: #495e57;
+  padding: 4rem 10%;
+  min-height: 80vh;
+  display: flex;
+  align-items: flex-start;
+}
+
+.booking h1 {
+  color: #f4ce14;
+  font-family: 'Markazi Text', serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #edefee;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: 'Karla', sans-serif;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  background-color: #edefee;
+  color: #333333;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #f4ce14;
+}
+
+.booking-form .btn {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
 /* ── RESPONSIVE ───────────────────────────────── */
 @media (max-width: 768px) {
-  .hero { flex-direction: column; }
+  .hero { flex-direction: column; padding: 3rem 5%; }
   .hero img { width: 100%; height: 20rem; }
+  .specials { padding: 3rem 5%; }
   .specials-cards { flex-direction: column; }
+  .testimonials { padding: 3rem 5%; }
   .testimonials-cards { flex-direction: column; }
   .about-section { grid-template-columns: 1fr; }
   .about-images { height: 260px; }
-  footer { flex-wrap: wrap; gap: 2rem; }
+  footer { flex-wrap: wrap; gap: 2rem; padding: 2rem 5%; }
   nav ul { flex-wrap: wrap; justify-content: center; }
+  .booking { padding: 3rem 5%; }
 }
 
 @media (max-width: 480px) {
@@ -176,4 +239,6 @@ footer a:hover { color: #f4ce14; }
   .testimonials { padding: 2rem 1rem; }
   .about-section { padding: 2rem 1rem; }
   footer { flex-direction: column; padding: 1.5rem 1rem; }
+  .booking { padding: 2rem 1rem; min-height: auto; }
+  .booking-form .btn { width: 100%; text-align: center; }
 }
