@@ -9,7 +9,6 @@ import "./App.css"
 function App() {
   return (
     <>
-      <div className="container">
       <Header />
       <Nav />
       <Main/>
@@ -17,7 +16,6 @@ function App() {
       <Testimonials />
       <About />
       <Footer />
-      </div>
     </>
   );
 }

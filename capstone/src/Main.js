@@ -2,7 +2,7 @@ import restaurantImg from'./images/restaurant.jpg';
 function Main(){
     return(
         <main>
-            <secction className="hero">
+            <section className="hero">
                 <article>
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
@@ -10,7 +10,7 @@ function Main(){
                     <a href="#reservations" className="btn">Reserve a Table</a>
                 </article>
                 <img src={restaurantImg} alt="Restaurant" />
-            </secction>
+            </section>
         </main>
     );
 }
