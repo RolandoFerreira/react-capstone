@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { useReducer } from 'react';
 import Header from './Header';
-import Nav from './Nav';
 import HomePage from './HomePage';
 import BookingPage from './BookingPage';
 import ConfirmedBooking from './ConfirmedBooking';
@@ -31,30 +30,29 @@ function AppContent() {
   const navigate = useNavigate();
 
   const submitForm = (formData) => {
-  if (typeof window.submitAPI === 'function') {
-    const success = window.submitAPI(formData);
-    if (success) {
+    if (typeof window.submitAPI === 'function') {
+      const success = window.submitAPI(formData);
+      if (success) {
+        const existing = JSON.parse(localStorage.getItem('bookings') || '[]');
+        existing.push(formData);
+        localStorage.setItem('bookings', JSON.stringify(existing));
+        navigate('/confirmed');
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } else {
       const existing = JSON.parse(localStorage.getItem('bookings') || '[]');
       existing.push(formData);
       localStorage.setItem('bookings', JSON.stringify(existing));
       navigate('/confirmed');
-    } else {
-      alert('Something went wrong. Please try again.');
     }
-  } else {
-    const existing = JSON.parse(localStorage.getItem('bookings') || '[]');
-    existing.push(formData);
-    localStorage.setItem('bookings', JSON.stringify(existing));
-    navigate('/confirmed');
-  }
-};
+  };
 
   return (
     <>
       <Header />
-      <Nav />
       <Routes>
-        <Route path="/" element={<HomePage availableTimes={availableTimes} dispatch={dispatch} />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
         <Route path="/confirmed" element={<ConfirmedBooking />} />
       </Routes>

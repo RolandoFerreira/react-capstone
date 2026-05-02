@@ -1,37 +1,20 @@
 import { Link } from 'react-router-dom';
 import restaurantImg from './images/restaurant.jpg';
 
-export function initializeTimes() {
-  if (typeof window.fetchAPI === 'function') {
-    return window.fetchAPI(new Date());
-  }
-  return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-}
-
-export function updateTimes(state, action) {
-  switch (action.type) {
-    case 'UPDATE_TIMES':
-      if (typeof window.fetchAPI === 'function') {
-        return window.fetchAPI(new Date(action.date));
-      }
-      return state;
-    default:
-      return state;
-  }
-}
-
 function Main() {
   return (
-    <main>
-      <section className="hero">
-        <article>
+    <main aria-label="Main content">
+      <section className="hero" aria-label="Hero section">
+        <article aria-label="Restaurant introduction">
           <h1>Little Lemon</h1>
           <h2>Chicago</h2>
           <p>We are a family owned Mediterranean restaurant, focused on
           traditional recipes served with a modern twist.</p>
-          <Link to="/booking" className="btn">Reserve a Table</Link>
+          <Link to="/booking" className="btn" aria-label="Reserve a Table">
+            Reserve a Table
+          </Link>
         </article>
-        <img src={restaurantImg} alt="Restaurant" />
+        <img src={restaurantImg} alt="Inside view of Little Lemon restaurant" />
       </section>
     </main>
   );
