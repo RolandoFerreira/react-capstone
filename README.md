@@ -23,6 +23,8 @@ A React web application built as the capstone project for the Meta Front-End Dev
 ### Installation
 ```bash
 npm install
+npx create-react-app my-app
+npm install react-router-dom
 ```
 
 ### Run the app
