@@ -1,13 +1,17 @@
 import BookingForm from './BookingForm';
 import Footer from './Footer';
 
-function BookingPage() {
+function BookingPage({ availableTimes, dispatch, submitForm }) {
   return (
     <>
-      <section className= "booking">
-        <div className="secion-inner">
+      <section className="booking">
+        <div className="section-inner">
           <h1>Reserve a Table</h1>
-          <BookingForm />
+          <BookingForm
+            availableTimes={availableTimes}
+            dispatch={dispatch}
+            submitForm={submitForm}
+          />
         </div>
       </section>
       <Footer />

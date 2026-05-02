@@ -1,21 +1,24 @@
 import { useState } from 'react';
-function BookingForm() {
+
+function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [date, setDate]         = useState('');
-  const [time, setTime]         = useState('17:00');
+  const [time, setTime]         = useState(availableTimes[0]);
   const [guests, setGuests]     = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
 
-  const [availableTimes] = useState([
-    '17:00', '18:00', '19:00', '20:00', '21:00', '22:00',
-  ]);
+  const handleDateChange = (e) => {
+    const selectedDate = e.target.value;
+    setDate(selectedDate);
+    dispatch({ type: 'UPDATE_TIMES', date: selectedDate });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Reservation submitted:', { date, time, guests, occasion });
+    submitForm({ date, time, guests, occasion });
   };
 
   return (
-    <form className="booking-form" onSubmit={handleSubmit}>
+    <form className="booking-form" onSubmit={handleSubmit} aria-label="Table reservation form">
 
       <div className="form-group">
         <label htmlFor="res-date">Choose date</label>
@@ -23,7 +26,7 @@ function BookingForm() {
           type="date"
           id="res-date"
           value={date}
-          onChange={(e) => setDate(e.target.value)}
+          onChange={handleDateChange}
           required
         />
       </div>
