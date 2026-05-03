@@ -11,7 +11,7 @@ A React web application built as the capstone project for the Meta Front-End Dev
 - Dark mode toggle
 - Accessible markup (ARIA labels, semantic HTML)
 - Unit tests with Jest and React Testing Library
-- UI Design & Prototype. https://www.figma.com/design/kNqX2lum9HqcGoG0nDozsL/LittleLemonCapstone?t=1jUPfsMOcrWB3Dif-1
+- UI Design & Prototype. (https://www.figma.com/design/kNqX2lum9HqcGoG0nDozsL/LittleLemonCapstone?t=1jUPfsMOcrWB3Dif-1)
 
 ## Tech Stack
 - React
